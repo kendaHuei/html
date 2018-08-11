@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        article {
+            border: 1px solid blue;
+
+        }
+
+        div {
+            border: 1px solid red;
+            width: 100px;
+            height: 100px;
+            left: 10px;
+            top: 10px;
+        }
+
+        div:nth-child(3) {
+            /* position: static; */
+            /* position: relative; */
+             /* position: static; */
+             /* position: absolute;  */
+             position: fixed;
+             left: 100px;
+            top: 100px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- article>div*4{item$} -->
+    <article>
+        <div>item1</div>
+        <div>item2</div>
+        <div>item3</div>
+        <div>item4</div>
+    </article>
+</body>
+
+</html>

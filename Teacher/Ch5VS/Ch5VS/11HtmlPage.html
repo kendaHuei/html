@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <form id="myForm">
+        <input type="text" name="fName" id="fName" value="mary" />
+        <input type="text" name="lName" id="lName" value="lin" />
+        <input type="button" id="btn" value="Send" />
+    </form>
+
+    <div id="div1"></div>
+    <script src="Scripts/jquery-3.3.1.min.js"></script>
+    <script>
+        $(function () {
+            $("#btn").click(function () {
+                //var x = $("#myForm").serializeArray(); //JSON , Array
+                var x = $("#myForm").serialize();  //Key=value&key=value
+                alert(JSON.stringify(x));
+                $.ajax({
+                    url: "sampleForm.aspx",
+                    type: "POST",
+                    dataType: "text",
+                    data: x
+                }).done(function (resp) {
+                    $("#div1").html(resp);
+                });
+            });
+
+        });
+
+    </script>
+</body>
+</html>

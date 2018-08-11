@@ -1,0 +1,55 @@
+﻿<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>demo</title>
+  <style type="text/css">
+    p::first-letter {
+      color: red;
+      font-size: xx-large;
+    }
+
+    p::first-line {
+      background-color: yellow;
+    }
+
+    li::before {
+      content: url(images/AppInstalled.gif);
+    }
+
+    li::after {
+      content: url(images/AppInstalled.gif);
+    }
+    ::selection{
+      color: pink;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Text Pseudo-Elements </h1>
+  <p>
+    Text-based pseudo-elements match elements that are not easily identifiable in the document tree for a page.
+  </p>
+  <p>
+    The following list describes some of the more commonly used pseudo-elements. Notice that in a CSS rule you use a double colon
+    to concatenate them to a text item.
+  </p>
+
+  <ul>
+    <li>:first-letter 選第一行第一個字</li>
+    <li>:first-line 選第一行</li>
+    <li>:before pseudo-element新增content到element之前</li>
+    <li>:selection 使用者選取的文字</li>
+
+  </ul>
+
+  <blockquote cite="http://www.worldwildlife.org/who/index.html">
+    For 50 years, WWF has been protecting the future of nature. The world’s leading conservation organization, WWF works in 100
+    countries and is supported by 1.2 million members in the United States and close to 5 million globally.
+  </blockquote>
+
+</body>
+
+</html>

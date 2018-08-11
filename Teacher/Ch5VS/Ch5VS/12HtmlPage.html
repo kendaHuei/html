@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+    <form>
+        <input type="text" id="text1" name="q"
+               autocomplete="off" value=""
+               list="list1" />
+        <input type="submit" />
+    </form>
+    <datalist id="list1"></datalist>
+    <script src="Scripts/jquery-3.3.1.min.js"></script>
+    <script>
+        $(function () {
+            $("#text1").on("input", function () {
+                //console.log($(this).val());
+                $.ajax({
+                    url: "sample_datalist.aspx?q=" + $(this).val(),
+                    success: function (data) {
+                        console.log(data);
+                        $("#list1").empty();
+                        data.forEach(function (item) {
+                            $("#list1").append($("<option>").text(item));
+                        });
+
+                    }
+                });
+            })
+        });
+    </script>
+</body>
+</html>

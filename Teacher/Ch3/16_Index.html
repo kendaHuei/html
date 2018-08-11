@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    </style>
+</head>
+
+<body>
+    <h1 id="myhead">Lorem ipsum dolor sit amet.</h1>
+    <form name="contactForm">
+        <input type="text" name="nameBox" id="nameBoxId" value="123" />
+    </form>
+
+    <!-- (p>lorem5)*5   -->
+    <p class="blue">Lorem ipsum dolor sit amet.</p>
+    <p class="blue">At quod veniam vero accusantium?</p>
+    <p>Sint atque quaerat neque tempore?</p>
+    <p>Cupiditate dolor id iusto nihil.</p>
+    <p>Ab vitae excepturi fugiat nobis.</p>
+
+    <script>
+        var para =document.getElementsByTagName("p");
+       for (let i = 0; i < para.length; i++) {
+           para[i].style.backgroundColor = "orange";
+           para[i].style.color = "white";
+       }
+
+       var para =document.getElementsByClassName("blue");
+       for (let i = 0; i < para.length; i++) {
+           para[i].style.backgroundColor = "blue";
+           para[i].style.color = "white";
+       }
+
+
+
+        console.log(document.forms[0]);
+        console.log(document.forms["contactForm"]);
+        console.log(document.forms.contactForm);
+        console.log(document.contactForm);
+        console.log(document.forms[0].name);
+
+        console.log(document.forms[0].elements["nameBox"].value);
+        console.log(document.getElementById("nameBoxId").value);
+        console.log(document.querySelector("#nameBoxId").value);
+        console.log(document.getElementsByName("nameBox")[0].value);
+
+        var header = document.getElementById("myhead");
+        header.parentNode.removeChild(header);
+
+        var newHead = document.createElement("H1");
+        newHead.innerHTML = "New Header";
+        newHead.style.border = "solid 2px green";
+        document.body.insertBefore(newHead, document.contactForm);
+
+
+
+
+    </script>
+</body>
+
+</html>

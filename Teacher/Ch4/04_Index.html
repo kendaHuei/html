@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .validatedFine {
+            border-color: #0f0;
+        }
+
+        .validationError {
+            border-color: #f00;
+        }
+    </style>
+</head>
+<body>
+    <form method="post" onsubmit="return validate();">
+        <input type="text" id="ageInput" oninput="checkAge(this)">
+        <input type="text" id="txt">
+        <input type="submit" />
+    </form>
+    <script>
+        function check(input) {
+            var pa = /[^\s]{1,}/;
+            var r = input.search(pa);
+            return r != -1;
+        }
+        function validate() {
+            var txt = document.getElementById("txt").value;
+            if (check(txt)) {
+                document.getElementById("txt").className="validatedFine";
+                return true;
+            } else {
+                document.getElementById("txt").className="validationError";
+                return false;
+            }
+        }
+
+
+        function checkAge(ageInput) {
+            var age = parseInt(ageInput.value);
+
+            var ageValid = age >= 18 && age <= 100;
+            if (!ageValid) {
+                ageInput
+                    .setCustomValidity(
+                        "Age is invalid. Please specify a value between 18 and 120");
+            } else {
+                ageInput.setCustomValidity("");
+            }
+        }
+
+    </script>
+</body>
+
+</html>

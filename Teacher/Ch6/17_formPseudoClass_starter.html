@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <title></title>
+  <style type="text/css">
+    input[type="text"]:enabled {
+      background-color: aqua;
+    }
+    input[type="text"]:disabled {
+      background-color:blanchedalmond;
+    }
+    /* input:checked{
+      width: 50px;
+      height: 50px;
+    } */
+
+     :checked{
+      width: 50px;
+      height: 50px;
+    }
+    /* input:not(:checked){
+      width: 50px;
+      height: 50px;
+    } */
+
+    input[type="checkbox"]:not(:checked){
+      width: 50px;
+      height: 50px;
+    }
+  </style>
+</head>
+
+<body>
+  <input type="text" value="123" />
+  <input type="text" value="123" />
+  <input type="text" value="123" disabled="disabled" />
+
+
+  <input type="checkbox" />
+  <input type="checkbox" title="op" checked="checked" />
+</body>
+
+</html>

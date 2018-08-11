@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    </style>
+</head>
+
+<body>
+
+    <script>
+        var a = new Array(2);
+        console.log(a.length);
+
+        var a = new Array("2");
+        console.log(a[0]);
+        console.log(a.length);
+
+        //Array Literal Notation
+        var a = ["Spring", "Summer", "Autumn", "Winter"];
+        console.log(a[0]);
+        console.log(a[1]);
+        console.log(a[2]);
+        console.log(a[3]);
+
+        a[0]="xxx";
+        console.log(a[0]);
+        a[4]="xyz";
+        console.log(a.length);
+        // a.length=0;
+        // console.log(a[0]);
+        console.log(a.toString());
+        console.log(a.join("-"));
+
+        a.push("yyy");
+        console.log(a.toString());
+        console.log(a.pop());
+
+        console.log(a.indexOf("Summer"));
+        a.splice(1,2,"haha","hehe");
+
+        console.log(a.toString());
+
+
+       //ES6
+       for (const i of a) {
+           console.log(i);
+       }
+
+
+
+    </script>
+</body>
+
+</html>

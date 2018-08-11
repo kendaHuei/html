@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    </style>
+</head>
+
+<body>
+    <select id="carManufacturer" name="carManufacturer">
+        <optgroup label="European">
+        
+            <option value="volvo">Volvo</option>
+        
+            <option value="audi">Audi</option>
+        </optgroup>
+        <optgroup label="American">
+        
+            <option value="chrysler">
+                Chrysler</option>
+        
+            <option value="ford">
+                Ford</option>
+        </optgroup>
+    </select>
+    <div id="r"></div>
+
+    <script>
+        document.getElementById("carManufacturer")
+        .addEventListener("change",function () {
+            console.log(this.value);
+            document.getElementById("r").textContent = this.value;
+        });
+
+    </script>
+</body>
+
+</html>

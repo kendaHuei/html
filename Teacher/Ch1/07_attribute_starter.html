@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title></title>
+  <style>
+    /* input[type="text"]
+    {
+      color: red;
+    } */
+
+    /* input[class~="red"]
+    {
+      color: red;
+    } */
+    /* input[type^="tel"]
+    {
+      color: red;
+    } */
+    /* input[type$="el"]
+    {
+      color: red;
+    } */
+
+     /* input[type*="te"]
+    {
+      color: red;
+    } */
+    /* input[class|="light"]
+    {
+      color: red;
+    } */
+    /* input[type="text"][class="green"]
+    {
+      color: red;
+    } */
+    /* input[type="checkbox"][checked]
+    {
+      width:50px;
+      height:50px;
+    } */
+
+     input:checked
+    {
+      width:50px;
+      height:50px;
+    }
+  </style>
+ 
+</head>
+<body>
+  <form id="form1">
+    <div>
+      請輸入個人資料:<br />
+      <br />
+      姓名 :<input class="green" type="text" value="Mary" /><br />
+      地址:<input class="red" type="text" value="Fu shing N. Rd" /><br />
+      年齡<input class="light-blue" type="text" value="30" /><br />
+      職稱<input class="light" type="text" value="CEO" /><br />
+      電話號碼:
+      <input type="tel" value="12345657" /><br />
+      <br />
+      選取你喜歡的興趣 :<br />
+      <br />
+      <br />
+      <br />
+      爬山<input onchange="checkChange(this.value)" 
+      type="checkbox" value="check1" checked="checked"  /><br />
+      遊泳<input onchange="checkChange(this.value)" 
+      type="checkbox" value="check2"  /><br />
+      逛街<input onchange="checkChange(this.value)" 
+      type="checkbox" value="check3" /><br />
+    </div>
+  </form>
+  <script>
+    function checkChange(o) {
+      alert(o);
+    }
+  </script>
+</body>
+</html>

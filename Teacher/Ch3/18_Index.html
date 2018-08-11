@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .main {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="div1">Lorem ipsum dolor sit amet.</div>
+    <h2 class="myclass">Lorem ipsum dolor sit amet.</h2>
+    <h2>Illo nemo reprehenderit unde earum.</h2>
+    <h2>Unde quasi eius voluptatum molestiae.</h2>
+    <h2>Deserunt aut voluptatum fuga ea?</h2>
+    <h2>Hic voluptatem exercitationem a asperiores.</h2>
+    <ul>
+        <li>Lorem ipsum dolor sit.</li>
+        <li>Magnam voluptas nobis esse.</li>
+        <li>Ullam voluptatum numquam nobis!</li>
+    </ul>
+    <input type="text" id="txt" value="123">
+
+    <form>
+        <p>
+            <label>Write Your Name:
+                <input type="text" id="NameBox" />
+            </label>
+        </p>
+        <input type="button" id="submit" value="Click to submit" />
+    </form>
+    <div id="thankYouArea"></div>
+
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+        $(function () {
+            $("#submit").click(
+                function () {
+                    var userName = $("#NameBox").val();
+                    $("#thankYouArea").replaceWith("<p>Thank you " + userName + "</p>");
+                });
+                
+            //alert("hi");
+            // $("#div1").show().addClass("main").html("hello");
+            // $("h2").each(function () {
+            //     // $(this).css("color","blue");
+            //     $(this).css({ "color": "red", "background-color": "yellow" });
+            // });
+            // $(".myclass").first().css("color","green");
+            // $("h2").eq(2).css("color","pink");
+            // $("h2").filter(":even").css("color","green");
+            //$("h2").filter(":odd").css("color","green");
+            $("ul").find("li:even").css("color", "green");
+            $("ul").detach();
+            console.log($("input[type=text]").val());
+            console.log($("#txt").val());
+
+          
+
+
+        });
+    </script>
+</body>
+
+</html>

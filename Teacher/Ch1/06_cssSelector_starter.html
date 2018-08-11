@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>1-15</title>
+  <!-- <style>
+   h2{
+     font-size: 24px;
+   }
+   .red{
+     color: green;;
+   }
+   #alert{
+     background-color: red;
+     color: white;
+   }
+   h2.blue{
+     color: blue;
+   }
+   h2#toc{
+     font-weight: bold;
+     color: blueviolet;
+   }
+  </style> -->
+  <style>
+    /* section h2{
+      color: red;
+    } */
+    /* section>h2{
+      color: red;
+    } */
+
+     /* section+h2{
+      color: red;
+    } */
+    /* section~h2{
+      color: red;
+    } */
+
+     section *{
+      color: red;
+    }
+  </style>
+</head>
+<body>
+
+  <div>
+    <h2 class="blue">Header 2 with class attribute blue</h2>
+    <h2>Header 2</h2>
+    <h2 id="toc">Header 2 with id attribute toc</h2>
+    <p class="red">This is a paragraph</p>
+    <p id="alert" class="red">This is a paragraph with id alert</p>
+    <hr />
+    <h3>Header 3</h3>
+    <h4>Header 4</h4>
+    <hr />
+    <h2>Header 2 before section</h2>
+    <section>
+      <h2>Header 2 nested in section </h2>
+      <div>
+        <h2>Header 2 nested in section </h2>
+      </div>
+      <h2>h2 nested in section </h2>
+    </section>
+    <h2>Header 2 after section element 1</h2>
+    <h2>Header 2 after section element 2</h2>
+    <div><h2>Header 2 after section element 3 nested in div</h2></div>
+  </div>
+
+</body>
+</html>

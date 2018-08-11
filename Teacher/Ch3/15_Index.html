@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    </style>
+</head>
+
+<body>
+
+    <script>
+      var book = {
+          "title":"js",
+          'price':1000
+      }
+
+      console.log(book);
+      console.log(typeof book);
+      console.log(book.title);
+      console.log(book.price);
+
+      var s = JSON.stringify(book);
+      console.log(s);
+
+      var o = JSON.parse(s);
+      console.log(o.title);
+      console.log(o.price);
+      //ES6
+      console.log(`Book Info : ${o.title} , ${o.price+200}`);
+      console.log("Book info :" + o.title + " , " + o.price);
+
+    </script>
+</body>
+
+</html>
