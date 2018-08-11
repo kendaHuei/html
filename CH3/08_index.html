@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <script>
+        var a = new Array(10);
+        a[0] = '999';
+        console.log(a.length);
+
+        var a = ["Mother", "Father", "Brother", "Sister"];
+        for (i=0;i<=a.length;i++){
+            console.log(a[i]);
+        }
+        console.log(a.toString());
+        a.push("Me");
+        console.log(a.pop());
+        
+        console.log(a.indexOf("QQ"));
+        console.log("長度:" + a.length);
+        a.splice(1,2,"son","daughter")
+        console.log(a.toString());
+
+        for (const i of a) {
+            console.log(i);
+        }
+    </script>
+</body>
+</html>
+

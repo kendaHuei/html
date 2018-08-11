@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <input type="button" id="btn" value="GET" onclick="getdata();"/>
+    <div id="div"></div>
+    <script>
+        function getdata() {
+            var req = new XMLHttpRequest();
+            var url = "sample.aspx";
+            req.open("GET", url, false);
+            req.send();
+
+            if (req.status != 200) {
+                getObj("div1").innerHTML = "error";
+            } else {
+                getObj("div1").innerHTML = req.responseText;
+            }
+        }
+
+        function getObj(o) {
+            return document.getElementById(o);
+        }
+    </script>
+</body>
+</html>

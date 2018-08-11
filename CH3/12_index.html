@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style>
+        .main{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+        <div id="div1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, consequatur!</div>
+        <h1>today is not my day</h1>
+        <h1>today is my day</h1>
+
+        <input type="text" id="txt" value="999"/>
+
+        <form>
+            <p>
+                <label>Name:
+                        <input type="text" id="txtName" value=""/>
+                </label>
+            </p>
+            <input type="button" id="btnSend" value="Submit" />
+            
+        </form>
+        <div id="result">123</div>
+
+        <script src="Script/jquery-3.3.1.js"></script>
+        <script>
+            $(function () {
+                $("#btnSend").click(
+                    function() {
+                        var name = $("#txtName").val();
+                        $("#result").replaceWith("<p>Thank you " + name + "</p>")
+                    }
+                )
+
+
+                $("#div1").show().addClass("main").html("hello");
+                $("h1").each(function() {
+                    $(this).css({"color": "red", "background-color": "yellow"});
+                });
+                //$("h1").eq(0).css("color", "blue");
+
+                //$("h1").filter(":even").css("color", "gray");
+
+                $("h1").filter(":odd").css("color", "gray");
+
+                console.log($("input[type=text]").val());
+            });
+        </script>
+    </body>
+</html>
+

@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <select name="op" id="op">
+        <optgroup label="animal">
+            <option value="fish">fish</option>
+            <option value="puppy">puppy</option>
+            <option value="cat">cat</option>
+        </optgroup>
+        <optgroup label="number">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+        </optgroup>
+    </select>
+    <div id="msg"></div>
+
+    <script>
+        getObj("op").addEventListener("change", function() {
+            console.log(this.value);
+            getObj("msg").textContent = this.value;
+        })
+
+       function getObj(o) {
+            return document.getElementById(o);
+        }
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <form method="POST" onsubmit="return validate();">
+        <input type="text" id="txtage" oninput="checkAge(this);"/>
+        <input type="text" id="txt"/>
+        <input type="submit" />
+    </form>
+
+    
+
+    <script>
+        function check(input){
+            var pa =  /[^\s]{1,}/;
+            var r = input.search(pa);
+            
+            return r != -1
+        }
+        function validate(){
+            var txt = getObj("txt").value;
+            if (check(txt)) {
+                return true;
+            }else {
+                return false;
+            }
+        }
+
+        function checkAge(ageValue){
+            var age = parseInt(ageValue.value);
+            
+            var ageValid = age >=18;
+            if (!ageValid) {
+                ageValue.setCustomValidity("Age < 18");
+            } else {
+                ageValue.setCustomValidity("");
+            }
+        }
+        
+
+       function getObj(o) {
+            return document.getElementById(o);
+        }
+    </script>
+</body>
+</html>
+

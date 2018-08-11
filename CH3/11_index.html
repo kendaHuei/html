@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <div id="div1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, consequatur!</div>
+    <img id="img" src="images/60Lemon.png">
+    <script>
+       getObj("div1").onclick = function () {
+           confirm("please key some advise!!");
+       }
+       
+       getObj("div1").addEventListener("click", function () {
+           alert("QQ")
+       })
+
+       getObj("img").addEventListener("mouseover", function () {
+           this.src = "images/60Orange.png"
+       })
+
+       getObj("img").addEventListener("mouseleave", function () {
+           this.src = "images/60Lemon.png"
+       })
+
+       function getObj(o) {
+            return document.getElementById(o);
+        }
+    </script>
+</body>
+</html>
+

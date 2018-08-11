@@ -1,0 +1,11 @@
+{
+  "version": "0.2.1",
+  "defaults": {},
+  "configurations": [
+    {
+      "type": "managed",
+      "name": "WebSite1",
+      "project": "WebSite1\\WebSite1"
+    }
+  ]
+}

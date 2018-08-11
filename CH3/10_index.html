@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <h1 id="myhead"> This Mine</h1>
+    <form name="Formtest">
+        <input type="text" name="nameBox" id="txtName" value="gary"/>
+        
+    </form>
+    <p class="part">Lorem ipsum dolor sit amet.</p>
+    <p class="part">Voluptatum odit dolor maiores delectus?</p>
+    <p>Accusamus consequuntur iure ea sint.</p>
+    <p>Iusto voluptatibus corrupti perferendis provident!</p>
+    <p>Obcaecati culpa voluptatum molestiae earum?</p>
+
+    <script>
+        var para = document.getElementsByTagName("p");
+            for (let i = 0; i < para.length; i++) {
+                para[i].style.backgroundColor = "lightGray";
+                para[i].style.color = "blue";
+            }
+
+        var para = document.getElementsByClassName("part");
+            for (let i = 0; i < para.length; i++) {
+                para[i].style.backgroundColor = "lightgreen";
+                para[i].style.color = "blue";
+            }
+
+
+
+
+        var con = console.log;
+        con(document.forms.Formtest);
+        con(document.forms[0].elements["txtName"].value);
+        con(getObj("txtName").value);
+
+        con(document.querySelector("#txtName").value);
+
+        var head = getObj("myhead");
+        head.parentNode.removeChild(head);
+        
+        var newHead = document.createElement("H1");
+        newHead.innerHTML="Hello Mr.Q"
+        newHead.style.border = "solid 2px lightblue"
+        document.body.insertBefore(newHead, document.Formtest);
+
+
+
+        function getObj(o) {
+            return document.getElementById(o);
+        }
+
+    </script>
+</body>
+</html>
+

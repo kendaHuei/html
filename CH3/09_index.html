@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <script>
+        var book = {
+            title: "javascript",
+            price: 360,
+        }
+    console.log(book);
+
+    var s = JSON.stringify(book);
+    console.log(s);
+
+    var o = JSON.parse(s);
+    console.log(o.title);
+    console.log(o.price);
+
+    //ES6
+    console.log(`Book Info : ${o.title}`);
+    </script>
+</body>
+</html>
+
