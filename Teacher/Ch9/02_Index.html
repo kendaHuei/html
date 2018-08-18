@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    </style>
+</head>
+
+<body>
+    <input type="text" id="txt">
+    <div id="result"></div>
+    <br/>
+    <input type="button" value="Save" id="btn1" />
+    <input type="button" value="Read" id="btn2" />
+    <input type="button" value="Remove" id="btn3" />
+    <input type="button" value="Clear" id="btn4" />
+    <input type="button" value="Read All" id="btn5" />
+    <script>
+
+        document.getElementById("btn1").addEventListener("click", function () {
+            //sessionStorage.setItem("mykey", document.getElementById("txt").value);
+            //sessionStorage["mykey"]=document.getElementById("txt").value;
+            sessionStorage.mykey =document.getElementById("txt").value;
+        });
+
+        document.getElementById("btn2").addEventListener("click", function () {
+            //document.getElementById("result").textContent =sessionStorage.getItem("mykey");
+           // document.getElementById("result").textContent =sessionStorage["mykey"];
+           document.getElementById("result").textContent =sessionStorage.mykey;
+        });
+
+        document.getElementById("btn3").addEventListener("click", function () {
+            sessionStorage.removeItem("mykey");
+        });
+        document.getElementById("btn4").addEventListener("click", function () {
+            sessionStorage.clear();
+        });
+        document.getElementById("btn5").addEventListener("click", function () {
+              
+              for (let i = 0; i < sessionStorage.length; i++) {
+                  var key = sessionStorage.key(i);
+                  var value = sessionStorage[key];
+                  console.log(` ${key} , ${value}`);
+                  
+              }
+        });
+    </script>
+</body>
+
+</html>

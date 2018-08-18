@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    </style>
+</head>
+
+<body>
+    <script>
+        empName = "Global";
+        console.log(empName);
+        console.log(window.empName);
+
+        var emp = { empName: "Employee" };
+        function getName() {
+            return this.empName;
+        }
+
+        console.log(getName());
+
+        emp.getEmpName = getName;
+        console.log(emp.getEmpName());
+
+
+    </script>
+</body>
+
+</html>

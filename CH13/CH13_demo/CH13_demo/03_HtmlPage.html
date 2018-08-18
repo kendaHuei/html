@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <div style="border:1px solid red;width:200px;height:200px;"
+         ondragover="handleDragOver(event)"
+         ondrop="handleDrop(event)">
+    </div>
+
+    <script>
+        function handleDragOver(event) {
+            event.stopPropagation();
+            event.preventDefault();
+            event.dataTransfer.dropEffect = "copy";
+        }
+        function handleDrop() {
+            event.stopPropagation();
+            event.preventDefault();
+            var files = event.dataTransfer.files;
+            console.log(files);
+            var file = files[0];
+            event.target.innerHTML = file.name;
+
+            var socket = new WebSocket('ws://localhost:61359/WSHandler.ashx');
+            socket.onopen = function () {
+                socket.send(file);
+            }
+            socket.onerror = function() {
+                console.log("fail");
+            }
+        }
+    </script>
+
+</body>
+</html>

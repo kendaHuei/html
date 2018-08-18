@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    </style>
+</head>
+
+<body>
+    <script>
+        function Account(id, name) {
+            this.id = id;
+            this.name = name;
+            this.balance = 0;
+        };
+
+        console.log(Account.prototype);
+
+        Account.prototype={
+            deposit: function(amount){
+                this.balance += amount;
+            },
+            withdraw: function(amount){
+                this.balance -= amount;
+            },
+            display: function(){
+                console.log(` ${this.id} , ${this.name} , ${this.balance}`);
+            }
+        }
+
+        var acc1 = new Account(1, 'mary');
+        console.log(acc1.id, acc1.name);
+        console.log(acc1.constructor == Account);
+        acc1.deposit(11100);
+        acc1.withdraw(500);
+        acc1.display();
+
+
+    </script>
+</body>
+
+</html>

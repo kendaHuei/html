@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <input type="button" id="btnOpen" value="Open" onclick="opensocket()" />
+    <script>
+        function opensocket() {
+            var socket = new WebSocket('ws://localhost:61359/WSHandler.ashx'); 
+            socket.onopen = function () {
+                socket.send("hi");
+            }
+            socket.onmessage = function (event) {
+                console.log(event.data);
+                console.log(event);
+                console.log("onmessage"); 
+            }
+            socket.onerror = function () {
+                console.log("error");
+            }
+
+        }
+    </script>
+</body>
+</html>

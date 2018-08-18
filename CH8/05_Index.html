@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    </style>
+</head>
+
+<body>
+
+    <div draggable="true" ondragstart="handleDrag(event)">
+        <b>Some content</b> to be dragged.
+    </div>
+    <script>
+        function handleDrag(event) {
+            event.dataTransfer.effectAllowed = "copy";
+            event.dataTransfer.setData("text", event.target.innerHTML);
+        }
+    </script>
+
+    <div style="border:1px solid red;width:200px;height:200px;" 
+    ondragover="handleDragOver(event)" 
+    ondrop="handleDrop(event)" />
+
+    <script>
+        function handleDragOver(event) {
+            event.stopPropagation();
+            event.preventDefault();
+            event.dataTransfer.dropEffect = "copy";   // Display a "copy" cursor
+        }
+        function handleDrop(event) {
+            event.stopPropagation();
+            event.preventDefault();
+            event.target.innerHTML = event.dataTransfer.getData("text");
+        }
+    </script>
+
+    <script>
+
+    </script>
+</body>
+
+</html>

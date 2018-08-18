@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #ball {
+            width: 40px;
+            height: 40px;
+            background-color: green;
+            position: relative;
+            border-radius: 20px;
+            left: 0px;
+            top: 0px;
+        }
+        @keyframes ballmovement {
+            0% {
+                left: 0px;
+                top: 0px;
+                background-color: yellow;
+            }
+            33% {
+                left: 100px;
+                top: 160px;
+            }
+            66% {
+                left: 200px;
+                top: 0px;
+            }
+            100% {
+                left: 300px;
+                top: 160px;
+                background-color: purple;
+            }
+        }
+        
+        #ball.animate{
+            animation-name: ballmovement;
+            animation-duration: 10s;
+            animation-delay: 3s;
+            animation-timing-function: linear;
+            animation-iteration-count: 2;
+            animation-direction: alternate;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="ball" ></div>
+
+    <script>
+         document.getElementById("ball").addEventListener("click",function () {
+           this.classList.add("animate");
+           console.log("click");
+        });
+        document.getElementById("ball").addEventListener("animationstart",function () {
+            console.log("animationstart");
+        });
+        document.getElementById("ball").addEventListener("animationiteration",function () {
+            console.log("animationiteration");
+        });
+        document.getElementById("ball").addEventListener("animationend",function () {
+            console.log("animationend");
+            this.classList.remove("animate");
+        });
+    </script>
+</body>
+
+</html>

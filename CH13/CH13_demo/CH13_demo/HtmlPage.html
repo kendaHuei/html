@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <input type="button"  id="btnOPen" value="Open" onclick="opensocket(); " />
+    var socket.onopen = function (){
+        socket.send("hi");
+    }
+    socket.onmessage = function (){
+    
+    }
+    socket.onerror = function (){
+    console.log("error");
+    }
+
+</body>
+</html>

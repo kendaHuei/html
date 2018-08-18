@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 50px;
+        }
+
+        div {
+            background-color: red;
+            width: 100px;
+            height: 100px;
+            /* transform: translate(50px, 50px); */
+            /* transform: translateX(50px); */
+            /* transform: translateY(50px); */
+            /* transform: rotate(60deg); */
+            /* transform: scale(0.5,0.5); */
+            /* transform: skew(-50deg); */
+            /* transform: translate(50px, 50px)  rotate(60deg) scale(0.5,0.5) skew(-50deg); */
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- #d1>lorem5-->
+    <div id="d1">Lorem ipsum dolor sit amet.</div>
+    <script>
+    var s1 ="transform: rotate(60deg)";
+    var s2 ="transform: rotate(0deg)";
+    document.getElementById("d1").addEventListener("mouseover",function(){
+        document.getElementById("d1").style = s1;
+    });
+    document.getElementById("d1").addEventListener("mouseout",function(){
+        document.getElementById("d1").style = s2;
+    });
+
+    </script>
+</body>
+
+</html>

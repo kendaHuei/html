@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    </style>
+</head>
+
+<body>
+
+    <script>
+
+        //global variable
+        var x = 10;
+        console.log(x);
+
+        function myfunc() {
+            'use strict';
+            //local variable , scope
+            {
+                var y = 200;
+            }
+            //console.log(y);
+            console.log(x, y);
+            x = 30;
+            console.log(x);
+
+        }
+
+        myfunc();
+
+        console.log(x);
+    </script>
+</body>
+
+</html>

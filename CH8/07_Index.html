@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    </style>
+</head>
+
+<body>
+
+    <div id="videoDir">
+
+    </div>
+    <input type="button" id="Button1" value="play/pause">
+
+    <script>
+        function createVideoElement() {
+            // Create a video object and set its properties. 
+            var newVideo = document.createElement("video");
+            newVideo.id = "myvideo";
+            newVideo.src = "video/movie.mp4";
+
+            newVideo.loop = true;
+            newVideo.autoplay = false;
+            newVideo.controls = true;
+            newVideo.poster = "images/60Lemon.png";
+
+            var hostElem = document.getElementById("videoDir");
+            hostElem.appendChild(newVideo);
+        }
+
+        var aVideo = document.getElementById("myvideo");
+        document.getElementById("Button1").addEventListener("click", function () {
+            if (aVideo.paused) {
+                alert("Video current time: " + aVideo.currentTime + ", total duration: " +
+                    aVideo.duration);
+                aVideo.play();
+            }
+            else {
+                aVideo.pause();
+            }
+        });
+        createVideoElement();
+    </script>
+</body>
+
+</html>

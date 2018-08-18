@@ -1,0 +1,11 @@
+/* @media screen and (max-width:400px){
+    #element {
+        border: none;
+        background: yellow;
+    }
+} */
+
+    #element {
+        border: none;
+        background: yellow;
+    }

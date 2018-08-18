@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+    </style>
+      <style>
+        svg {
+          border: 2px solid darkblue;
+          background-color: lightgreen;
+          width: 500px;
+          height: 800px;
+        }
+      </style>
+</head>
+<body>
+   
+    <svg xmlns="http://www.w3.org/2000/svg">
+      <defs> 
+        <pattern id="checkerPattern" width="80" height="80" 
+patternUnits="userSpaceOnUse"> 
+            <rect fill="red"  x="0"  y="0"  width="40" height="40" /> 
+            <rect fill="blue" x="40" y="0"  width="40" height="40" /> 
+            <rect fill="blue" x="0"  y="40" width="40" height="40" /> 
+            <rect fill="red"  x="40" y="40" width="40" height="40" /> 
+        </pattern> 
+    </defs> 
+    <rect x="0" y="0" width="200" height="200" fill="url(#checkerPattern)"  
+stroke="orange" stroke-width="5" /> 
+    <g transform="translate(200, 200)"> 
+        <g transform="scale(0.5)"> 
+            <g transform="rotate(20, 160, 160)"> 
+                <rect x="0" y="0" width="200" height="200" fill="url(#checkerPattern)" 
+stroke="orange" stroke-width="5" /> 
+            </g> 
+        </g> 
+    </g>  
+      
+      </svg> 
+</body>
+</html>

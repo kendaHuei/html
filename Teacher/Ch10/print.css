@@ -1,0 +1,16 @@
+@media print{
+  header,footer{
+    display: none;
+  }
+  a::after{
+      content: "("attr(href)")"
+  }
+  @page{
+      size: landscape;
+  }
+  @page :left {
+    margin-left:3cm;
+    margin-right:6cm;
+
+}
+}

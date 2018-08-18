@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    </style>
+</head>
+
+<body>
+    <script>
+        // Base constructor. 
+        var Person = function (name, age) {
+            this.name = name;
+            this.age = age;
+        }
+        // Base prototype. 
+        Person.prototype = {
+            haveBirthday: function () {
+                this.age++;
+            }
+        };
+        // console.log(Person.prototype.constructor);
+        // // // Derived constructor. 
+        var Student = function (name, age, subject) {
+            // this.name = name;
+            // this.age = age;
+            Person.call(this,name,age);
+            this.subject = subject;
+        }
+        // // // Set the derived prototype to be the same object as the base prototype, 
+        // // // and reset that derived prototype so that it uses the correct constructor. 
+          Student.prototype = new Person();
+         Student.prototype.constructor = Student;
+        // // // Create a derived object and invoke any methods defined in the object or one of its  
+        // // // parents. JavaScript uses prototype chaining to locate methods up the inheritance tree. 
+         var aStudent = new Student("Jim", 20, "Physics");
+        //  aStudent.subject = "BioChemistry";
+        // console.log(aStudent.haveBirthday());;
+        // console.log(aStudent.age); 
+        console.log(Student.prototype.constructor);
+    </script>
+</body>
+
+</html>

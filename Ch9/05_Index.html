@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    </style>
+
+</head>
+
+<body>
+    <input type="button" value="Add" id="btnAdd" />
+    <input type="button" value="Get" id="btnGet" />
+    <input type="button" value="Delete" id="btnDelete" />
+    <input type="button" value="Update" id="btnUpdate" />
+
+
+    <script>
+
+        var db;
+        var indexedDB = window.indexedDB || window.msIndexedDB;
+        var IDBTransaction = window.IDBTransaction;
+        function contentLoaded() {
+            indexedDB.deleteDatabase("contosoDB");
+            var openRequest = indexedDB.open("contosoDB");
+            openRequest.onsuccess = function (event) {
+                db = event.target.result;
+            };
+            openRequest.onerror = function (event) {
+                alert("Error " + event.target.errorCode + " occurred while opening the database");
+            };
+
+            openRequest.onupgradeneeded = function (event) {
+                var db = event.target.result;
+                var attendee = {
+                    id: "1",
+                    name: "Rachel Valdez",
+                    password: "Pa$$w0rd"
+                };
+                var attendeeStore = db.createObjectStore("attendees", { keyPath: "id" });
+                attendeeStore.add(attendee);
+            }
+
+            document.getElementById("btnAdd").addEventListener("click", function () {
+                var transaction = db.transaction("attendees", "readwrite");
+                var attendeeStore = transaction.objectStore("attendees");
+
+                var newAttendee = {
+                    id: "2",
+                    name: "Eric Gruber",
+                    password: "Pa$$w0rd"
+                };
+                var addRequest = attendeeStore.add(newAttendee);
+                addRequest.onsuccess = function (event) {
+                    console.log("add success");
+                }
+                addRequest.onerror = function (event) {
+                    console.log("add error");
+                };
+
+            });
+            document.getElementById("btnGet").addEventListener("click", function () {
+                var transaction = db.transaction("attendees", "readwrite");
+                var attendeeStore = transaction.objectStore("attendees");
+
+                var attendee;
+                var getRequest = attendeeStore.get("1");
+                getRequest.onsuccess = function (event) {
+                    attendee = event.target.result;
+                    console.log(attendee.name);
+                }
+                getRequest.onerror = function () {
+                    console.log("get error");
+                };
+
+            });
+
+            document.getElementById("btnDelete").addEventListener("click", function () {
+                var transaction = db.transaction("attendees", "readwrite");
+                var attendeeStore = transaction.objectStore("attendees");
+
+                var deleteRequest = attendeeStore.delete("1"); // Remove the details for Rachel Valdez 
+                deleteRequest.onsuccess = function (event) {
+                    console.log("delete success");
+                }
+                deleteRequest.onerror = function (event) {
+                    console.log("delete error");
+                };
+
+
+            });
+
+            document.getElementById("btnUpdate").addEventListener("click", function () {
+                var transaction = db.transaction("attendees", "readwrite");
+                var attendeeStore = transaction.objectStore("attendees");
+
+                var updatedAttendee = {
+                    id: "1",              // Id of existing attendee 
+                    name: "xxxx",
+                    password: "P@ssw0rd" // Change the password 
+                };
+                var updateRequest = attendeeStore.put(updatedAttendee);
+                updateRequest.onsuccess = function (event) {
+                    console.log("update success");
+                }
+                updateRequest.onerror = function (event) {
+                   console.log("update error");
+                };
+
+
+
+            });
+
+        }
+        window.addEventListener("DOMContentLoaded", contentLoaded);
+    </script>
+</body>
+
+</html>

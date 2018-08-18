@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 300px;
+            background-color: yellow;
+            transition: width 2s;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="div1">Lorem ipsum dolor sit,eat quas esse iure? Omnis reprehenderit totam qui hic corrupti aspernatur ducimus itaque facere
+        quae sed exercitationem esse nulla fuga, deleniti ipsum quaerat culpa earum minima assumenda quos praesentium velit!
+        Harum odio magni omnis eos eligendi nam et repudiandae aperiam possimus tenetur.</div>
+
+    <script>
+        document.getElementById("div1").onmouseover =function(){
+            this.style.width = "600px";
+        }
+        document.getElementById("div1").onmouseout =function(){
+            this.style.width = "300px";
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    </style>
+    <script>
+        function loadFile() {
+            var f = document.getElementById("file1");
+            console.log(f.files.length);
+            console.log(f.files[0].type);
+            if (f.files[0].type.match(/image.*/)) {
+
+                var reader = new FileReader();
+                reader.onload = function () {
+                    var img = document.getElementById("img1");
+                    img.src = reader.result;
+                }
+                reader.readAsDataURL(f.files[0]);
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+
+    <input type="file" id="file1" onchange="loadFile()">
+    <br/>
+   <img id="img1"/>
+
+</body>
+
+</html>

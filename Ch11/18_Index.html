@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        canvas {
+            border: 2px solid darkblue;
+            background-color: lightgreen;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <canvas id="myCanvas">
+
+    </canvas>
+    <script>
+        var canvas = document.getElementById('myCanvas');
+        var context = canvas.getContext('2d');
+        context.clearRect(0, 0, canvas.width, canvas.height);
+
+
+        var radialGradient = context.createRadialGradient(
+            canvas.width / 2, canvas.height / 2,
+10, canvas.width / 2, canvas.height / 2, 100);
+  radialGradient.addColorStop(0, "red");
+  radialGradient.addColorStop(0.4, "yellow");
+  radialGradient.addColorStop(1, "green");
+
+        context.fillStyle = radialGradient;
+        context.fillRect(20, 20, canvas.width - 40, canvas.height - 40);
+
+
+    </script>
+</body>
+
+</html>

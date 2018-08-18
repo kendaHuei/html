@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+     article{
+         padding: 10px;
+         border: 2px solid red;
+         display: flex;
+         /* flex-wrap: wrap; */
+     }
+
+     article>div{
+         flex-basis: 300px;
+         margin: 10px;
+         border: 2px solid blue;
+     }
+     @media screen and (max-width:480px){
+         article{
+             flex-direction: column;
+         }
+     }
+    </style>
+</head>
+<body>
+   
+    <article>
+        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque deserunt, enim quas a blanditiis tempora reiciendis nesciunt labore, omnis impedit culpa maiores sapiente quae doloribus dolorem laborum nobis perspiciatis odit?</div>
+        <div>Voluptatem quia aperiam sint? Eius libero commodi officiis porro minima sequi recusandae optio cumque in, non repellendus nam quibusdam. Voluptatum rem eum accusantium sequi est ut nesciunt numquam sed minus.</div>
+        <div>Quaerat aut esse quibusdam cumque qui labore, molestias fugiat sequi, alias perferendis libero distinctio reprehenderit tenetur. Vero delectus, similique deserunt facilis qui rerum doloribus ratione, distinctio soluta voluptatem non corporis!</div>
+        <div>Ipsum similique accusantium maiores dolores. Quasi excepturi recusandae ab sapiente, commodi quia, veritatis eius facere voluptate maxime fugiat omnis placeat reprehenderit nemo minus minima molestiae inventore quas nam sed similique?</div>
+    </article>
+  
+</body>
+</html>

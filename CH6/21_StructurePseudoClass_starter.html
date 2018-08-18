@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title></title>
+  <style type="text/css">
+      div {
+      width: 600px;
+      height: 100px;
+    }
+    /* :root{
+      background-color: aqua;
+    } */
+   /* div:empty{
+    background-color: aqua;
+
+   } */
+   :target{
+    background-color: aqua;
+   }
+   
+  </style>
+</head>
+<body>
+  <div>
+    :root selects a document's root element. For an HTML document, it will always select the HTML element.
+  </div>
+  <div>:empty selects an element of type E if it has no children or text content. </div>
+  <div>:target selects an element of type E if it is the target of a referring URL.
+     The :target pseudo selector in CSS matches when the hash in the URL and the id of an element are the same</div>
+  <div>:not(s) selects any element which does not match the selector strings. </div>
+  <div></div>
+
+  
+  <p><a href="#T1">T1</a></p>
+  <p><a href="#T2">T2</a></p>
+  <p><a id="T1">New content 1...</a></p>
+  <p><a id="T2">New content 2...</a></p>
+</body>
+</html>
+

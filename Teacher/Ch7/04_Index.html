@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    </style>
+</head>
+
+<body>
+    <script>
+        //var employee1 = {};
+        var employee1 = new Object();
+        employee1.name = "John Smith";
+        employee1.age = 21;
+        employee1.salary = 10000;
+
+        employee1.payRise = function (amount) {
+            this.salary += amount;
+        }
+
+        employee1.payRise(500);
+        console.log(employee1.salary);
+        console.log(employee1.name);
+        console.log(employee1.age);
+
+        console.log(employee1["salary"]);
+        console.log(employee1["name"]);
+        console.log(employee1["age"]);
+        employee1["payRise"](300);
+        console.log(employee1["salary"]);
+        
+        var s = "payRise";
+        employee1[s](300);
+        console.log(employee1["salary"]);
+
+
+
+    </script>
+</body>
+
+</html>

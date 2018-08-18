@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+  </style>
+  <style>
+    svg {
+      border: 2px solid darkblue;
+      background-color: lightgreen;
+      width: 300px;
+      height: 200px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <svg xmlns="http://www.w3.org/2000/svg">
+    <radialGradient id="g" fx="0.3" fy="0.3"> 
+      <stop offset="0.1" stop-color="yellow"  /> 
+      <stop offset="0.7" stop-color="red" /> 
+  </radialGradient>  
+
+
+    <circle cx="160" cy="120" r="60" stroke="blue" fill="url(#g)" />
+
+
+  </svg>
+</body>
+
+</html>
